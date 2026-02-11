@@ -33,22 +33,22 @@ const Signup = () => {
         }
         setLoading(true);
         try {
-            // Mock API call - Replace with actual backend endpoint
-            const response = await fetch('http://localhost:5000/api/signup', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password, mobile, monthly_income: monthlyIncome }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                setSuccess('Account created successfully! Redirecting to login...');
-                setTimeout(() => {
-                    navigate('/login');
-                }, 2000);
-            }
-            else {
-                setError(data.message || 'Registration failed');
-            }
+            // Mock Signup - Client side only for GitHub Pages
+            console.log('Using Mock Signup');
+
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Mock success
+            setSuccess('Account created successfully! Redirecting to login...');
+
+            // Simulate backend storage by logging (optional)
+            console.log('User registered:', { email, mobile, monthlyIncome });
+
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
+
         }
         catch (err) {
             console.error(err);
