@@ -6,7 +6,7 @@ import Signup from './components/auth/Signup';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/FINSAATHI">
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/home" element={<Home />} />
